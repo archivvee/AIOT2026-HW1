@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Environment Monitor (Live Demo)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="bg-animated"></div>
+
+    <div class="container">
+        <header class="glass header-area">
+            <div>
+                <h1>IoT Sensor Dashboard</h1>
+                <p class="subtitle">GitHub Pages Live Demo Edition</p>
+            </div>
+            <div class="controls">
+                <button id="sim-toggle-btn" class="btn btn-outline" onclick="toggleSimulation()">
+                    <span class="indicator"></span>
+                    <span id="sim-btn-text">Simulation: OFF</span>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="metrics-grid">
+                <div class="metric-card glass temp-card">
+                    <div class="metric-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+                        </svg>
+                        <h3>Temperature</h3>
+                    </div>
+                    <div class="metric-value">
+                        <span id="current-temp">--</span>
+                        <span class="unit">°C</span>
+                    </div>
+                </div>
+
+                <div class="metric-card glass hum-card">
+                    <div class="metric-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                        <h3>Humidity</h3>
+                    </div>
+                    <div class="metric-value">
+                        <span id="current-hum">--</span>
+                        <span class="unit">%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container glass">
+                <div class="chart-header">
+                    <h2>Simulated Historical Data</h2>
+                </div>
+                <div class="canvas-wrapper">
+                    <canvas id="sensorChart"></canvas>
+                </div>
+            </div>
+        </main>
+
+        <footer class="glass footer-area">
+            <p><strong>Note:</strong> This is a static GitHub Pages demo.</p>
+            <p class="footer-meta">Data is generated entirely in the browser using JavaScript.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
