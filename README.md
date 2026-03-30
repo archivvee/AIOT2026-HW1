@@ -1,5 +1,8 @@
 # AIOT HW1: ESP32 溫濕度感測器與 Flask 即時儀表板
 
+# Demo
+https://archivvee.github.io/AIOT2026-HW1/github_pages_demo/
+
 這個專案包含兩個主要部分：
 1. **esp32_sensor**: ESP32 感測器的 C++ (Arduino) 程式碼，負責讀取 DHT11 溫濕度感測器的資料，並透過 HTTP GET 請求傳送給後端。
 2. **esp32_backend**: 使用 Python Flask 與 SQLite 建構的伺服器與現代化網頁儀表板，用來接收、儲存與視覺化歷史資料。
